@@ -1,10 +1,10 @@
-const CACHE_NAME = 'daily-money-tree-v1';
+const CACHE_NAME = 'daily-money-tree-v2';
 const urlsToCache = [
-    './',
-    './index.html',
-    './app.css',
-    './app.js',
-    './manifest.json'
+    '/daily_money/',
+    '/daily_money/index.html',
+    '/daily_money/app.css',
+    '/daily_money/app.js',
+    '/daily_money/manifest.json'
 ];
 
 // インストール時のキャッシュ
