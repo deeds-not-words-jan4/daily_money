@@ -1,6 +1,6 @@
 {
   "name": "嘉数道代専用アプリ",
-  "short_name": "Money Tree",
+  "short_name": "嘉数道代専用アプリ",
   "description": "残高と残日数から1日あたりの使用可能額を表示するアプリ",
   "start_url": "/daily_money/",
   "scope": "/daily_money/",
@@ -10,14 +10,14 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌳</text></svg>",
+      "src": "100-75.jpeg",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/jpeg"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌳</text></svg>",
+      "src": "100-75.jpeg",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/jpeg"
     }
   ]
 }
