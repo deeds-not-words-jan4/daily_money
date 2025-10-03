@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f7f0 0%, #e8ebe0 100%);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,10 +17,10 @@ body {
 }
 
 .container {
-    background: white;
+    background: #fefefe;
     border-radius: 20px;
     padding: 20px 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     max-width: 400px;
     width: 100%;
     text-align: center;
@@ -28,7 +28,7 @@ body {
 }
 
 h1 {
-    color: #4CAF50;
+    color: #7a9b76;
     margin-bottom: 15px;
     font-size: 24px;
 }
@@ -46,7 +46,7 @@ h1 {
 
 label {
     display: block;
-    color: #555;
+    color: #6b7a69;
     margin-bottom: 5px;
     font-weight: 600;
     font-size: 16px;
@@ -55,21 +55,22 @@ label {
 input[type="number"] {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #d4ddd1;
     border-radius: 8px;
     font-size: 18px;
     transition: border-color 0.3s;
+    background-color: #fafbf9;
 }
 
 input[type="number"]:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #a0b89d;
 }
 
 button {
     width: 100%;
     padding: 15px;
-    background: #4CAF50;
+    background: #8fb88c;
     color: white;
     border: none;
     border-radius: 10px;
@@ -82,7 +83,7 @@ button {
 }
 
 button:hover {
-    background: #45a049;
+    background: #7a9b76;
 }
 
 button:active {
@@ -114,5 +115,48 @@ button:active {
 .daily-amount {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #7a9b76;
+}
+
+.cracker {
+    position: fixed;
+    bottom: -50px;
+    font-size: 40px;
+    animation: rise 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.falling-leaf {
+    position: fixed;
+    top: -50px;
+    font-size: 35px;
+    animation: leaf-fall 3s ease-in forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes leaf-fall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) translateX(30px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(100vh) translateX(-20px) rotate(360deg);
+        opacity: 0.3;
+    }
 }

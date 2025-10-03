@@ -35,6 +35,40 @@ function getTreeImage(amount) {
     return '25-0.jpeg';
 }
 
+// クラッカーアニメーション
+function showCrackers() {
+    const crackers = ['🎉', '✨', '🎊', '⭐', '💫'];
+    for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+            const cracker = document.createElement('div');
+            cracker.className = 'cracker';
+            cracker.textContent = crackers[Math.floor(Math.random() * crackers.length)];
+            cracker.style.left = Math.random() * 100 + '%';
+            cracker.style.animationDelay = Math.random() * 0.3 + 's';
+            document.body.appendChild(cracker);
+
+            setTimeout(() => cracker.remove(), 2000);
+        }, i * 50);
+    }
+}
+
+// 枯れ葉アニメーション
+function showFallingLeaves() {
+    const leaves = ['🍂'];
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            const leaf = document.createElement('div');
+            leaf.className = 'falling-leaf';
+            leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDelay = Math.random() * 0.5 + 's';
+            document.body.appendChild(leaf);
+
+            setTimeout(() => leaf.remove(), 3000);
+        }, i * 80);
+    }
+}
+
 // 計算処理
 function calculate() {
     const balance = parseFloat(balanceInput.value);
@@ -56,6 +90,15 @@ function calculate() {
     const imageSrc = getTreeImage(daily);
     treeIcon.innerHTML = `<img src="${imageSrc}" alt="Money Tree">`;
     dailyAmount.textContent = `1日あたり：￥${daily.toLocaleString()}`;
+
+    // 3000円以上ならクラッカーアニメーション
+    if (daily >= 3000) {
+        showCrackers();
+    }
+    // 1000円未満なら枯れ葉アニメーション
+    else if (daily < 1000) {
+        showFallingLeaves();
+    }
 }
 
 // イベントリスナー
