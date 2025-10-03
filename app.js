@@ -27,11 +27,12 @@ function loadData() {
     }
 }
 
-// 木のイラストを選択
-function getTreeIcon(amount) {
-    if (amount >= 2000) return '🌳';
-    if (amount >= 1000) return '🌲';
-    return '🪦';
+// 木の画像を選択
+function getTreeImage(amount) {
+    if (amount >= 3000) return '100-75.jpeg';
+    if (amount >= 2000) return '75-50.jpeg';
+    if (amount >= 1000) return '50-25.jpeg';
+    return '25-0.jpeg';
 }
 
 // 計算処理
@@ -41,7 +42,7 @@ function calculate() {
 
     if (!balance || !days || days <= 0) {
         dailyAmount.textContent = '正しい値を入力してください';
-        treeIcon.textContent = '';
+        treeIcon.innerHTML = '';
         return;
     }
 
@@ -52,7 +53,8 @@ function calculate() {
     localStorage.setItem('days', days);
 
     // 表示更新
-    treeIcon.textContent = getTreeIcon(daily);
+    const imageSrc = getTreeImage(daily);
+    treeIcon.innerHTML = `<img src="${imageSrc}" alt="Money Tree">`;
     dailyAmount.textContent = `1日あたり：￥${daily.toLocaleString()}`;
 }
 
